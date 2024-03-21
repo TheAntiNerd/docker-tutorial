@@ -1,0 +1,11 @@
+version: '3.8' # Use a suitable version for your Docker Engine and Compose file
+
+services:
+    node-server: # Name of the service
+        # image: my-web-app:latest  # Image to use for the service
+        build: # Optional section if you want to build the image
+            context: ./node-server
+        ports:
+            - '3000:3000' # Port forwarding: hostPort:containerPort
+        volumes:
+            - ./node-server/public:/app/public # Volume sharing
